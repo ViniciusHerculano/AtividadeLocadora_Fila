@@ -200,8 +200,6 @@ void devolver()
 
 	//INÍCIO CODIFICAÇÃO
 
-	char op;
-
 	if (fil != NULL)
 	{
 		if (fil->emprest == 1)
@@ -216,9 +214,13 @@ void devolver()
 			cin >> op;
 			while (op == 'S' || op == 's')
 			{
-				if (fil->cod == )
+				if (fil->cod == cli_codigo)
 				{
-
+					locar();
+				}
+				else
+				{
+					cout << "O filme está reservado para outro cliente!" << endl;
 				}
 			}
 			
