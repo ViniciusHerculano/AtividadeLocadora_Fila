@@ -50,9 +50,9 @@ int cadastrar()
 		fil->dia[i] = cria();
 	}
 
-	cout << "Filme cadastrado com sucesso!"<< endl;
+	cout << "Filme cadastrado com sucesso!" << endl;
 	cont++;
-	
+
 
 	//FIM CODIFICAÇÃO
 
@@ -145,6 +145,29 @@ void reservar()
 
 
 	//INÍCIO CODIFICAÇÃO
+
+	if (fil != NULL) {
+
+		cout << "Digite o dia da reserva (0 ~ 6: ";
+		cin >> dia_reserva;
+		while (dia_reserva < 0 || dia_reserva >6) {
+			cout << "O dia informado eh invalido, tenta novamente: ";
+			cin >> dia_reserva;
+		}
+		Fila* f = fil->dia[dia_reserva];
+
+		if (cheia(f)) {
+			cout << "As reservas estao esgotadas";
+		}
+		else {
+			inserir(f, cli_cod);
+			cout << "Filme reservado com sucesso!";
+		}
+
+	}
+	else {
+		cout << "Filme não cadastrado";
+	}
 
 
 
