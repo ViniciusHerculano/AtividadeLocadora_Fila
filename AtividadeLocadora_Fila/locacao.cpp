@@ -105,6 +105,25 @@ void locar()
 
 	//INÍCIO CODIFICAÇÃO
 
+	if (fil != NULL)
+	{
+		if (fil->emprest == 0)
+		{
+			fil->emprest = 1;
+
+			cout << "Informe o dia para devolução:\n0 Domingo\n1 Segunda\n2 Terca\n3 Quarta\n4 Quinta\n5 Sexta\n6 Sabado\n" << endl;
+			cin >> fil->dia_dev;
+			cout << "Filme locado com sucesso!";
+		}
+		else
+		{
+			cout << "Filme não está disponível para locação!";
+		}
+	}
+	else 
+	{
+		cout << "O filme não está cadastrado!" << endl;
+	}
 
 
 
@@ -209,6 +228,29 @@ void devolver()
 
 	//INÍCIO CODIFICAÇÃO
 
+	if (fil != NULL)
+	{
+		if (fil->emprest == 1)
+		{
+			fil->emprest = 0;
+			cout << "A devolução foi realizada com sucesso!" << endl; 
+		}
+		
+		if (fil->dia[fil->dia_dev] != NULL)
+		{
+			cout << "Filme já resevado!\nDeseja locar novamente? [S/N]" << endl;
+			cin >>
+		}
+		else
+		{
+
+		}
+
+	}
+	else
+	{
+		cout << "O filme não está cadastrado!" << endl;
+	}
 
 
 
