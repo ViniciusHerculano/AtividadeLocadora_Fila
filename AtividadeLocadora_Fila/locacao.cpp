@@ -44,10 +44,15 @@ int cadastrar()
 	////Incrementar contador de código de filmes
 
 	//INÍCIO CODIFICAÇÃO
+	fil->emprest = 0;
 
+	for (int i = 0; i < 7; i++) {
+		fil->dia[i] = cria();
+	}
 
-
-
+	cout << "Filme cadastrado com sucesso!"<< endl;
+	cont++;
+	
 
 	//FIM CODIFICAÇÃO
 
