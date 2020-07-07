@@ -125,7 +125,7 @@ void locar()
 
 	//FIM CODIFICAÇÃO
 
-	getch();
+	_getch();
 }
 
 void reservar()
@@ -166,7 +166,7 @@ void reservar()
 
 	//FIM CODIFICAÇÃO
 
-	getch();
+	_getch();
 
 }
 
@@ -200,6 +200,8 @@ void devolver()
 
 	//INÍCIO CODIFICAÇÃO
 
+	char op;
+
 	if (fil != NULL)
 	{
 		if (fil->emprest == 1)
@@ -211,7 +213,15 @@ void devolver()
 		if (fil->dia[fil->dia_dev] != NULL)
 		{
 			cout << "Filme já resevado!\nDeseja locar novamente? [S/N]" << endl;
-			cin >>
+			cin >> op;
+			while (op == 'S' || op == 's')
+			{
+				if (fil->cod == )
+				{
+
+				}
+			}
+			
 		}
 		else
 		{
@@ -229,7 +239,7 @@ void devolver()
 
 	//FIM CODIFICAÇÃO
 
-	getch();
+	_getch();
 }
 
 
