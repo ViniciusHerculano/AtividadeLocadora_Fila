@@ -44,9 +44,14 @@ int cadastrar()
 	////Incrementar contador de código de filmes
 
 	//INÍCIO CODIFICAÇÃO
+	fil->emprest = 0;
 
+	for (int i = 0; i < 7; i++) {
+		fil->dia[i] = cria();
+	}
 
-
+	cout << "Filme cadastrado com sucesso!" << endl;
+	cont++;
 
 
 	//FIM CODIFICAÇÃO
@@ -160,6 +165,29 @@ void reservar()
 
 	//INÍCIO CODIFICAÇÃO
 
+	if (fil != NULL) {
+
+		cout << "Digite o dia da reserva (0 ~ 6: ";
+		cin >> dia_reserva;
+		while (dia_reserva < 0 || dia_reserva >6) {
+			cout << "O dia informado eh invalido, tenta novamente: ";
+			cin >> dia_reserva;
+		}
+		Fila* f = fil->dia[dia_reserva];
+
+		if (cheia(f)) {
+			cout << "As reservas estao esgotadas";
+		}
+		else {
+			inserir(f, cli_cod);
+			cout << "Filme reservado com sucesso!";
+		}
+
+	}
+	else {
+		cout << "Filme não cadastrado";
+	}
+
 
 
 
@@ -259,7 +287,7 @@ int main()
 		cout << "3 - Reservar" << endl;
 		cout << "4 - Devolver" << endl;
 		cout << "ESC - Sair" << endl;
-		op = getch();
+		op = _getch();
 
 		switch (op)
 		{
