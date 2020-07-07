@@ -111,7 +111,7 @@ void locar()
 
 	//FIM CODIFICAÇÃO
 
-	getch();
+	_getch();
 }
 
 void reservar()
@@ -175,7 +175,7 @@ void reservar()
 
 	//FIM CODIFICAÇÃO
 
-	getch();
+	_getch();
 
 }
 
@@ -215,7 +215,7 @@ void devolver()
 
 	//FIM CODIFICAÇÃO
 
-	getch();
+	_getch();
 }
 
 
@@ -233,7 +233,7 @@ int main()
 		cout << "3 - Reservar" << endl;
 		cout << "4 - Devolver" << endl;
 		cout << "ESC - Sair" << endl;
-		op = getch();
+		op = _getch();
 
 		switch (op)
 		{
