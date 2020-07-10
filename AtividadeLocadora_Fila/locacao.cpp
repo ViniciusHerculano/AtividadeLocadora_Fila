@@ -243,7 +243,7 @@ void devolver()
 
 			Fila* f = fil->dia[fil->dia_dev];
 
-			if ('S' || 's') {
+			if (op == 'S' || op == 's') {
 
 				for (int i = f->inicio; i < f->fim; i = incremento(i)) {
 
