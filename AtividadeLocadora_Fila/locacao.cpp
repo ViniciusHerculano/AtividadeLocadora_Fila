@@ -173,13 +173,12 @@ void reservar()
 			cout << "O dia informado eh invalido, tenta novamente: ";
 			cin >> dia_reserva;
 		}
-		Fila* f = fil->dia[dia_reserva];
 
-		if (cheia(f)) {
+		if (cheia(fil->dia[dia_reserva])) {
 			cout << "As reservas estao esgotadas";
 		}
 		else {
-			inserir(f, cli_cod);
+			inserir(fil->dia[dia_reserva], cli_cod);
 			cout << "Filme reservado com sucesso!";
 		}
 
@@ -233,17 +232,26 @@ void devolver()
 		if (fil->emprest == 1)
 		{
 			fil->emprest = 0;
-			cout << "A devolução foi realizada com sucesso!" << endl; 
+			cout << "A devolucao foi realizada com sucesso!" << endl; 
 		}
 		
-		if (fil->dia[fil->dia_dev] != NULL)
+		if (!vazia(fil->dia[fil->dia_dev]))
 		{
 			cout << "Filme já resevado!\nDeseja locar novamente? [S/N]" << endl;
-			cin >>
-		}
-		else
-		{
+			cin >> op;
 
+			Fila* f = fil->dia[fil->dia_dev];
+
+			if ('S' || 's') {
+				for (int i = f->inicio; i < f->fim; i = incremento(i)){
+					if (f->vetor[i] == cli_codigo) {
+						locar();
+					}
+					else {
+						cout <<  "Código do cliente diferente do reservado para locar" << endl;
+					}
+				}
+			}
 		}
 
 	}
