@@ -32,7 +32,7 @@ int cadastrar()
 	Filme* fil = criafilme();
 	Filmes[cont] = fil;
 
-	cout << "Codigo do filme:" << cont;
+	cout << "Codigo do filme: " << cont;
 	fil->cod = cont;
 
 	cout << "\nDigite o nome do filme: ";
@@ -113,13 +113,13 @@ void locar()
 		{
 			fil->emprest = 1;
 
-			cout << "Informe o dia para devolução:\n0 Domingo\n1 Segunda\n2 Terca\n3 Quarta\n4 Quinta\n5 Sexta\n6 Sabado\n" << endl;
+			cout << "Informe o dia para devolução:\n0 - Domingo\n1 - Segunda\n2 - Terca\n3 - Quarta\n4 - Quinta\n5 - Sexta\n6 - Sabado\n" << endl;
 			cin >> fil->dia_dev;
 			cout << "Filme locado com sucesso!";
 		}
 		else
 		{
-			cout << "Filme não está disponível para locacao!";
+			cout << "Filme nao esta disponivel para locacao!";
 		}
 	}
 	else 
@@ -175,7 +175,7 @@ void reservar()
 		}
 
 		if (cheia(fil->dia[dia_reserva])) {
-			cout << "As reservas estao esgotadas";
+			cout << "As reservas estao esgotadas!";
 		}
 		else {
 			inserir(fil->dia[dia_reserva], cli_cod);
@@ -184,7 +184,7 @@ void reservar()
 
 	}
 	else {
-		cout << "Filme nao cadastrado";
+		cout << "Filme nao cadastrado!";
 	}
 
 
@@ -203,10 +203,10 @@ void devolver()
 	char op;
 	Filme* fil;
 
-	cout << "Digite o codigo do cliente:" << endl;
+	cout << "Digite o codigo do cliente: " << endl;
 	cin >> cli_codigo;
 
-	cout << "Digite o codigo do filme:" << endl;
+	cout << "Digite o codigo do filme: " << endl;
 	cin >> filme_codigo;
 
 	fil = pesquisar(filme_codigo);
@@ -252,7 +252,7 @@ void devolver()
 					}
 					else {
 
-						cout << "Codigo do cliente diferente do reservado para locar" << endl;
+						cout << "Codigo do cliente diferente do reservado para locar!" << endl;
 
 					}
 				}
