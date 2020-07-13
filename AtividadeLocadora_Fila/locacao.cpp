@@ -113,7 +113,7 @@ void locar()
 		{
 			fil->emprest = 1;
 
-			cout << "Informe o dia para devolução:\n0 - Domingo\n1 - Segunda\n2 - Terca\n3 - Quarta\n4 - Quinta\n5 - Sexta\n6 - Sabado\n" << endl;
+			cout << "Informe o dia para devolucao:\n0 - Domingo\n1 - Segunda\n2 - Terca\n3 - Quarta\n4 - Quinta\n5 - Sexta\n6 - Sabado\n" << endl;
 			cin >> fil->dia_dev;
 			cout << "Filme locado com sucesso!";
 		}
@@ -167,7 +167,7 @@ void reservar()
 
 	if (fil != NULL) {
 
-		cout << "Digite o dia da reserva (0 ~ 6: ";
+		cout << "Digite o dia da reserva (0 ~ 6): ";
 		cin >> dia_reserva;
 		while (dia_reserva < 0 || dia_reserva >6) {
 			cout << "O dia informado eh invalido, tenta novamente: ";
