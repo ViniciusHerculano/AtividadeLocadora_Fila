@@ -261,7 +261,7 @@ void devolver()
 	}
 	else
 	{
-		cout << "O filme nao esta cadastrado!" << endl;
+		cout << "O filme nao esta emprestado!" << endl;
 	}
 
 
