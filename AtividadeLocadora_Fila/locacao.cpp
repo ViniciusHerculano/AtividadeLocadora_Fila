@@ -122,7 +122,7 @@ void locar()
 			cout << "Filme nao esta disponivel para locacao!";
 		}
 	}
-	else 
+	else
 	{
 		cout << "O filme nao esta cadastrado!" << endl;
 	}
@@ -234,90 +234,92 @@ void devolver()
 			fil->emprest = 0;
 
 			cout << "A devolucao foi realizada com sucesso!" << endl;
-		}
 
-		if (!vazia(fil->dia[fil->dia_dev]))
-		{
-			cout << "Filme ja resevado!\nDeseja locar novamente? [S/N]" << endl;
-			cin >> op;
+			if (!vazia(fil->dia[fil->dia_dev]))
+			{
+				cout << "Filme ja resevado!\nDeseja locar novamente? [S/N]" << endl;
+				cin >> op;
 
-			Fila* f = fil->dia[fil->dia_dev];
+				Fila* f = fil->dia[fil->dia_dev];
 
-			if (op == 'S' || op == 's') {
+				if (op == 'S' || op == 's') {
 
-				for (int i = f->inicio; i < f->fim; i = incremento(i)) {
+					for (int i = f->inicio; i < f->fim; i = incremento(i)) {
 
-					if (f->vetor[i] == cli_codigo) {
-						locar();
-					}
-					else {
+						if (f->vetor[i] == cli_codigo) {
+							locar();
+						}
+						else {
 
-						cout << "Codigo do cliente diferente do reservado para locar!" << endl;
+							cout << "Codigo do cliente diferente do reservado para locar!" << endl;
 
+						}
 					}
 				}
 			}
 		}
+		else
+		{
+			cout << "O filme nao esta emprestado!" << endl;
+		}
 	}
-	else
-	{
-		cout << "O filme nao esta emprestado!" << endl;
+	else {
+		cout << "O filme nao esta cadastrado!" << endl;
 	}
 
 
 	//FIM CODIFICAÇÃO
 
 	_getch();
-}
 
 
 
 
 
 	int main()
-{
-	int i, j;
-	char op;
+	{
+		int i, j;
+		char op;
 
-	do {
-		cout << "1 - Cadastrar" << endl;
-		cout << "2 - Locar" << endl;
-		cout << "3 - Reservar" << endl;
-		cout << "4 - Devolver" << endl;
-		cout << "ESC - Sair" << endl;
-		op = _getch();
+		do {
+			cout << "1 - Cadastrar" << endl;
+			cout << "2 - Locar" << endl;
+			cout << "3 - Reservar" << endl;
+			cout << "4 - Devolver" << endl;
+			cout << "ESC - Sair" << endl;
+			op = _getch();
 
-		switch (op)
-		{
-		case '1':
-			cadastrar();
-			break;
-		case '2':
-			locar();
-			break;
-		case '3':
-			reservar();
-			break;
-		case '4':
-			devolver();
-			break;
-		case 27:
-			for (i = 0; i < N; i++)
-				if (Filmes[i] != NULL) {
-					for (j = 0; j < 7; j++)
-						if (Filmes[i]->dia[j] != NULL)
-							delete(Filmes[i]->dia[j]);
+			switch (op)
+			{
+			case '1':
+				cadastrar();
+				break;
+			case '2':
+				locar();
+				break;
+			case '3':
+				reservar();
+				break;
+			case '4':
+				devolver();
+				break;
+			case 27:
+				for (i = 0; i < N; i++)
+					if (Filmes[i] != NULL) {
+						for (j = 0; j < 7; j++)
+							if (Filmes[i]->dia[j] != NULL)
+								delete(Filmes[i]->dia[j]);
 
-					delete(Filmes[i]);
-				}
-			break;
-		default: "Opcao invalida";
-		}
+						delete(Filmes[i]);
+					}
+				break;
+			default: "Opcao invalida";
+			}
 
-		system("cls");
+			system("cls");
 
-	} while (op != 27);
-}
+		} while (op != 27);
+	}
 
 
 
