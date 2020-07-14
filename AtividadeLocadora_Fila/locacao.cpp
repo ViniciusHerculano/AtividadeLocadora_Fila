@@ -271,55 +271,55 @@ void devolver()
 	//FIM CODIFICAÇÃO
 
 	_getch();
+}
 
 
 
 
+int main()
+{
+	int i, j;
+	char op;
 
-	int main()
-	{
-		int i, j;
-		char op;
+	do {
+		cout << "1 - Cadastrar" << endl;
+		cout << "2 - Locar" << endl;
+		cout << "3 - Reservar" << endl;
+		cout << "4 - Devolver" << endl;
+		cout << "ESC - Sair" << endl;
+		op = _getch();
 
-		do {
-			cout << "1 - Cadastrar" << endl;
-			cout << "2 - Locar" << endl;
-			cout << "3 - Reservar" << endl;
-			cout << "4 - Devolver" << endl;
-			cout << "ESC - Sair" << endl;
-			op = _getch();
+		switch (op)
+		{
+		case '1':
+			cadastrar();
+			break;
+		case '2':
+			locar();
+			break;
+		case '3':
+			reservar();
+			break;
+		case '4':
+			devolver();
+			break;
+		case 27:
+			for (i = 0; i < N; i++)
+				if (Filmes[i] != NULL) {
+					for (j = 0; j < 7; j++)
+						if (Filmes[i]->dia[j] != NULL)
+							delete(Filmes[i]->dia[j]);
 
-			switch (op)
-			{
-			case '1':
-				cadastrar();
-				break;
-			case '2':
-				locar();
-				break;
-			case '3':
-				reservar();
-				break;
-			case '4':
-				devolver();
-				break;
-			case 27:
-				for (i = 0; i < N; i++)
-					if (Filmes[i] != NULL) {
-						for (j = 0; j < 7; j++)
-							if (Filmes[i]->dia[j] != NULL)
-								delete(Filmes[i]->dia[j]);
+					delete(Filmes[i]);
+				}
+			break;
+		default: "Opcao invalida";
+		}
 
-						delete(Filmes[i]);
-					}
-				break;
-			default: "Opcao invalida";
-			}
+		system("cls");
 
-			system("cls");
-
-		} while (op != 27);
-	}
+	} while (op != 27);
+}
 
 
 
